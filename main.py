@@ -28,7 +28,7 @@ def mouse_function(event, x, y, flags, param):
         print(hsv[y][x])
 
 
-cap = cv.VideoCapture(1)
+cap = cv.VideoCapture(0)
 
 cv.namedWindow('Video')
 cv.namedWindow('Result')
