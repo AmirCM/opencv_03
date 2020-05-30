@@ -1,5 +1,4 @@
 import cv2 as cv
-import numpy as np
 
 cv.namedWindow('Original', cv.WINDOW_AUTOSIZE)
 cv.namedWindow('Threshold', cv.WINDOW_AUTOSIZE)
@@ -8,7 +7,7 @@ cv.namedWindow('Contours', cv.WINDOW_AUTOSIZE)
 img = cv.imread('cnt.jpg')
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-_, tresh = cv.threshold(gray, 250, 255, cv.THRESH_BINARY)
+_, tresh = cv.threshold(gray, 250, 255, cv.THRESH_BINARY_INV)
 contours, hierarchy = cv.findContours(tresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
 cv.imshow('Original', img)
